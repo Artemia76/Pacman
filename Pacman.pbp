@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.02 LTS (Windows - x64)">
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.02 LTS (Linux - x64)">
   <section name="config">
     <options closefiles="1" openmode="0" name="Pacman"/>
   </section>
   <section name="data">
-    <explorer view="..\..\..\ProgramData\PureBasic\Examples\" pattern="0"/>
+    <explorer view="../../../" pattern="0"/>
     <log show="1"/>
-    <lastopen date="2023-09-01 18:20" user="neoph" host="SYMERION"/>
+    <lastopen date="2023-09-05 23:24" user="gianni" host="genesis"/>
   </section>
   <section name="files">
-    <file name="Main.pb">
+    <file name="SpriteMap.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="1" panelstate="+"/>
-      <fingerprint md5="9ccccd20aad2840e82eefadf0a320d45"/>
+      <fingerprint md5="6f258a2638e914b4951669a7e47ee9c2"/>
     </file>
     <file name="MainWindow.pbf">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="2" panelstate="+"/>
-      <fingerprint md5="c3bbe87a54542c74088fc40cd1a1990e"/>
+      <fingerprint md5="1258754b670c746d8955720a95539168"/>
     </file>
-    <file name="SpriteMap.pb">
+    <file name="Main.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="3" panelstate="+"/>
-      <fingerprint md5="8208f05a8f0465899441e02aa1ee264e"/>
+      <fingerprint md5="269d130f78151ee20fc4f6ee88910f30"/>
     </file>
     <file name="Entity.pb">
-      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="4" panelstate="+"/>
-      <fingerprint md5="6f39cf3eba855b2d6e6dea43faae2cb1"/>
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate="+"/>
+      <fingerprint md5="33de78b7d4cbd44e6473546b73c26207"/>
     </file>
   </section>
   <section name="targets">
     <target name="Cible par défaut" enabled="1" default="1">
       <inputfile value="Main.pb"/>
-      <outputfile value="Pacman.exe"/>
-      <options xpskin="1" dpiaware="1" debug="1" optimizer="0"/>
+      <outputfile value="Pacman"/>
+      <executable value="Pacman"/>
+      <options thread="1" xpskin="1" dpiaware="1" debug="1" optimizer="0"/>
       <temporaryexe value="source"/>
+      <watchlist>Event;Last_Time;Frame_Time</watchlist>
     </target>
   </section>
 </project>

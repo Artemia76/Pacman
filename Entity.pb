@@ -8,19 +8,18 @@ Enumeration Direction
   #DIR_RIGHT
 EndEnumeration
 
-DeclareModule Entity
-  Interface Entity
-    getName.s ()
-    setName (pName.s)
-    getX.i ()
-    getY.i ()
+;DeclareModule Entity
+;  Interface Entity
+;    getName.s ()
+;    setName (pName.s)
+;    getX.i ()
+;    getY.i ()
     move (X.i,Y.i)
-    moveRel (pDir.Direction)
-    update ()
-  EndInterface
-EndDeclareModule
-; IDE Options = PureBasic 6.02 LTS (Windows - x64)
+;    moveRel (pDir.Direction)
+;    update ()
+;  EndInterface
+;EndDeclareModule
+; IDE Options = PureBasic 6.02 LTS (Linux - x64)
 ; CursorPosition = 20
-; Folding = -
 ; EnableXP
 ; DPIAware

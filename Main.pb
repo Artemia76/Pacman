@@ -1,7 +1,7 @@
-﻿XIncludeFile "MainWindow.pbf"
+﻿Global Quit = 0
+Global Sprite_Size = 48
+XIncludeFile "MainWindow.pbf"
 XIncludeFile "SpriteMap.pb"
-
-Global Quit = 0
 Enumeration Sprites
   #PACMAN = 10
   #GHOST_RED = 20
@@ -22,8 +22,10 @@ EndIf
 
 OpenMainWindow()
 
-If OpenWindowedScreen(WindowID(#MainWindow), DesktopScaledX(0), DesktopScaledX(0), DesktopScaledX(WindowWidth(#MainWindow)), DesktopScaledX(WindowHeight(#MainWindow)), 0, 0, 50)
-  LoadAnimatedSprite()
+FirstLoop = #True
+
+If OpenWindowedScreen(WindowID(#MainWindow), DesktopScaledX(10), DesktopScaledX(10), DesktopScaledX(WindowWidth(#MainWindow)-20), DesktopScaledX(WindowHeight(#MainWindow)-70), 0, 0, 0)
+  ReleaseMouse(#True)
   anim_offset=0
   anim_step = 2
   anim_skip = 10
@@ -31,19 +33,40 @@ If OpenWindowedScreen(WindowID(#MainWindow), DesktopScaledX(0), DesktopScaledX(0
   playerX = 1
   playerY = 1
   anim=0
+  Last_Time.q = ElapsedMilliseconds()
+  Target_FPS = 50
+  cpu_skip = 0
+  Frame_Time.q = 0
   Repeat
+    Counter = 0
     Repeat
+      Counter + 1
       Event = WindowEvent()
-      If Event <> 0
-        Select EventWindow()
-          Case MainWindow
-            MainWindow_Events(Event) ; Le nom de la procédure est toujours le nom de la fenêtre suivi de '_Events'
-        EndSelect
-        If Event =  #PB_Event_CloseWindow
-          Quit = 1
-        EndIf
-      EndIf
+      Select EventWindow()
+        Case #MainWindow
+          If MainWindow_Events(Event)=0 ; Le nom de la procédure est toujours le nom de la fenêtre suivi de '_Events'
+            Quit=1
+          EndIf
+      EndSelect
     Until Event = 0
+    
+    If FirstLoop
+      LoadAnimatedSprite()
+      FirstLoop = #False
+    Else
+      Frame_Time = ElapsedMilliseconds() - Last_Time
+      If Frame_Time = 0
+        Frame_Time + 1
+      EndIf
+      Last_Time = ElapsedMilliseconds()
+      If ( 1000 / Frame_Time) > Target_FPS
+        cpu_skip + ( 1000 / Target_FPS ) - Frame_Time
+      EndIf
+     ;If ( 1000 / Frame_Time) < Target_FPS
+     ;   cpu_skip - Frame_Time - (1000 / Target_FPS)
+      ;EndIf
+      StatusBarText(0, 0, "FPS =" + Str(1000 / Frame_Time) + " cpu_skip = " + cpu_skip )
+    EndIf
     
     ExamineKeyboard()
     
@@ -52,7 +75,7 @@ If OpenWindowedScreen(WindowID(#MainWindow), DesktopScaledX(0), DesktopScaledX(0
       playerY -3
       anim_offset = 4
     EndIf
-    If KeyboardPushed(#PB_Key_Down) And playerY < 600-48-50
+    If KeyboardPushed(#PB_Key_Down) And playerY < (WindowHeight(#MainWindow)-70-Sprite_Size)
       playerY +3
       anim_offset = 6
     EndIf
@@ -60,11 +83,11 @@ If OpenWindowedScreen(WindowID(#MainWindow), DesktopScaledX(0), DesktopScaledX(0
       playerX -3
       anim_offset = 2
     EndIf
-    If KeyboardPushed(#PB_Key_Right) And playerX < 800-48
+    If KeyboardPushed(#PB_Key_Right) And playerX < (WindowWidth(#MainWindow)-20-Sprite_Size)
       playerX +3
       anim_offset = 0
     EndIf
-    ClearScreen(RGB(0,0,0))
+    ClearScreen(#Black)
     DisplaySprite(#GHOST_RED + anim + anim_offset, playerX,PlayerY)
     If (anim_wait < anim_skip)
       anim_wait +1
@@ -77,13 +100,12 @@ If OpenWindowedScreen(WindowID(#MainWindow), DesktopScaledX(0), DesktopScaledX(0
       EndIf
     EndIf
     FlipBuffers()
+    Delay(cpu_skip)
   Until Quit 
 Else
     MessageRequester("Error", "Can't open windowed screen!", 0)
 EndIf
-; IDE Options = PureBasic 6.02 LTS (Windows - x64)
-; CursorPosition = 14
-; FirstLine = 4
+; IDE Options = PureBasic 6.02 LTS (Linux - x64)
 ; Folding = -
 ; EnableXP
 ; DPIAware
