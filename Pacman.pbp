@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.02 LTS (Linux - x64)">
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.40 (Linux - x64)">
   <section name="config">
     <options closefiles="1" openmode="0" name="Pacman"/>
   </section>
   <section name="data">
     <explorer view="../../../" pattern="0"/>
     <log show="1"/>
-    <lastopen date="2023-09-05 23:24" user="gianni" host="genesis"/>
+    <lastopen date="2026-08-05 19:37" user="gianni" host="Symerion"/>
   </section>
   <section name="files">
-    <file name="SpriteMap.pb">
+    <file name="Main.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="1" panelstate="+"/>
-      <fingerprint md5="6f258a2638e914b4951669a7e47ee9c2"/>
+      <fingerprint md5="37d16394ef2c6fcade47ac5329eea0a9"/>
+    </file>
+    <file name="SpriteMap.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="2" panelstate="+"/>
+      <fingerprint md5="59b2a21aae6d27ec9fd14308442150f7"/>
     </file>
     <file name="MainWindow.pbf">
-      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="2" panelstate="+"/>
-      <fingerprint md5="1258754b670c746d8955720a95539168"/>
-    </file>
-    <file name="Main.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="3" panelstate="+"/>
-      <fingerprint md5="269d130f78151ee20fc4f6ee88910f30"/>
+      <fingerprint md5="12b2986a318845d58a35984283bf9422"/>
     </file>
     <file name="Entity.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate="+"/>
@@ -32,9 +32,8 @@
       <inputfile value="Main.pb"/>
       <outputfile value="Pacman"/>
       <executable value="Pacman"/>
-      <options thread="1" xpskin="1" dpiaware="1" debug="1" optimizer="0"/>
+      <options thread="1" xpskin="1" dpiaware="1" debug="1" optimizer="1"/>
       <temporaryexe value="source"/>
-      <watchlist>Event;Last_Time;Frame_Time</watchlist>
     </target>
   </section>
 </project>
