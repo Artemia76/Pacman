@@ -1,10 +1,4 @@
-﻿Enumeration Sprites
-  #SPRITE_SET = 0
-  #PACMAN = 10
-  #GHOST_RED = 20
-EndEnumeration
-
-Global Sprite_Size = 48
+﻿XIncludeFile "Globals.pb"
 
 Procedure LoadAnimatedSprite ()
   ;On charge la Map des sprites

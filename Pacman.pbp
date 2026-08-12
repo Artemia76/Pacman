@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.40 (Linux - x64)">
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.40 (Windows - x64)">
   <section name="config">
     <options closefiles="1" openmode="0" name="Pacman"/>
   </section>
   <section name="data">
-    <explorer view="../../../" pattern="0"/>
+    <explorer view="..\..\..\" pattern="0"/>
     <log show="1"/>
-    <lastopen date="2026-08-05 19:37" user="gianni" host="Symerion"/>
+    <lastopen date="2026-08-09 20:28" user="neoph" host="GENESIS"/>
   </section>
   <section name="files">
     <file name="Main.pb">
-      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="1" panelstate="+"/>
-      <fingerprint md5="37d16394ef2c6fcade47ac5329eea0a9"/>
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate="+"/>
+      <fingerprint md5="f2acacbf2b2ece43fb4af10ec971420f"/>
     </file>
     <file name="SpriteMap.pb">
-      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="2" panelstate="+"/>
-      <fingerprint md5="59b2a21aae6d27ec9fd14308442150f7"/>
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate="+"/>
+      <fingerprint md5="09b3193de1456f7ae90674227b062e8f"/>
     </file>
     <file name="MainWindow.pbf">
-      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="3" panelstate="+"/>
-      <fingerprint md5="12b2986a318845d58a35984283bf9422"/>
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate="+"/>
+      <fingerprint md5="286195242e193f7a5c937e46448c6681"/>
     </file>
     <file name="Entity.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="0" sortindex="999" panelstate="+"/>
-      <fingerprint md5="33de78b7d4cbd44e6473546b73c26207"/>
+      <fingerprint md5="c9702cb6d9d8402a725b672029cb71a4"/>
     </file>
   </section>
   <section name="targets">
